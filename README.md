@@ -12,13 +12,21 @@ Detected whether each slot was occupied or empty based on whether a car’s cent
 Displayed the number of free slots on the video in real-time, with visual cues (red for occupied, green for empty).
 
 ✅ Task 2: Real-Time Detection with Webcam (Edge Device Simulation)
-Adapted the system to work in real-time using a PC webcam, simulating an edge-device environment.
 
-Loaded a custom-trained YOLOv8 model (yolov8s.pt) to perform live detection of cars.
 
-Counted the number of cars detected in the webcam frame and displayed live slot availability.
+**Objective:**  
+Implement real-time vehicle detection using webcam input to simulate an edge device (e.g., Raspberry Pi or Jetson Nano).
 
-The solution was made lightweight to run efficiently on a local device without needing cloud support.
+**Status:**  
+❌ Not implemented yet
+
+**Next Steps:**  
+- Integrate YOLOv8 model for live webcam input.  
+- Reuse slot-detection logic from Task 1.  
+- Optimize processing to run efficiently on low-power hardware.
+
+📌 This task will enhance the system by making it deployable in live environments.
+
 
 ✅ Task 3: Suspicious Human Activity Detection from Video
 Extended the system to monitor suspicious behavior of humans using a video input (e.g. CCTV feed).
@@ -36,3 +44,52 @@ Unusual posture or crouching (optional future implementation)
 Triggered visual alerts (e.g., red boxes or warning messages) when suspicious activity was detected.
 
 This feature enhances the parking monitoring system by adding a layer of security surveillance.
+
+
+✅ Recommended Folder Structure Based on  Files:
+
+
+Semicore-Assessment/
+│
+├── TASK_1_YOLOv8_ParkingDetection/
+│   ├── data/
+│   │   ├── parking1.mp4
+│   │   └── coco.txt
+│   ├── models/
+│   │   └── yolov8s.pt
+│   ├── scripts/
+│   │   ├── basic.py               # Probably your core detection logic
+│   │   ├── testcount.py          # Slot count checker
+│   │   └── video.txt             # Possibly parking slot areas or video path info
+│   ├── outputs/
+│   │   └── output_task1.mp4      # Final video with slot overlays
+│   └── README.md
+│
+│
+├── TASK_3_HumanBehavior_Monitoring/
+│   ├── data/
+│   │   ├── sp1.mp4               # Suspicious video input
+│   │   ├── nm1.mp4               # Normal behavior input
+│   │   └── nkeypoint.csv         # Keypoints / tracking data
+│   ├── models/
+│   │   ├── yolov8s.pt            # If custom model for human detection
+│   │   ├── yolo11s.pt
+│   │   ├── trained_model.json
+│   │   └── model.py              # Model structure
+│   ├── scripts/
+│   │   ├── Suspicious.py         # Main suspicious behavior detection
+│   │   ├── normalvideo.py        # Comparison video handler
+│   │   ├── suspiciousvideo.py    # Suspicious video detection logic
+│   │   ├── imgshuffle.py         # Preprocessing?
+│   │   ├── datset.py             # Dataset loading
+│   │   └── main.py               # Entry script
+│   ├── outputs/
+│   │   └── suspicious_output.mp4
+│   └── README.md
+│
+├── common/                       # Shared files if needed later
+│   └── shared_utils.py
+│
+├── requirements.txt
+└── README.md                     # Main project summary with task links
+
