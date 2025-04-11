@@ -46,47 +46,8 @@ Triggered visual alerts (e.g., red boxes or warning messages) when suspicious ac
 This feature enhances the parking monitoring system by adding a layer of security surveillance.
 
 
-✅ Recommended Folder Structure Based on  Files:
 
 
-Semicore-Assessment/
-│
-├── TASK_1_YOLOv8_ParkingDetection/
-│   ├── data/
-│   │   ├── parking1.mp4
-│   │   └── coco.txt
-│   ├── models/
-│   │   └── yolov8s.pt
-│   ├── scripts/
-│   │   ├── basic.py               # Probably your core detection logic
-│   │   ├── testcount.py          # Slot count checker
-│   │   └── video.txt             # Possibly parking slot areas or video path info
-│   ├── outputs/
-│   │   └── output_task1.mp4      # Final video with slot overlays
-│   └── README.md
-│
-│
-├── TASK_3_HumanBehavior_Monitoring/
-│   ├── data/
-│   │   ├── sp1.mp4               # Suspicious video input
-│   │   ├── nm1.mp4               # Normal behavior input
-│   │   └── nkeypoint.csv         # Keypoints / tracking data
-│   ├── models/
-│   │   ├── yolov8s.pt            # If custom model for human detection
-│   │   ├── yolo11s.pt
-│   │   ├── trained_model.json
-│   │   └── model.py              # Model structure
-│   ├── scripts/
-│   │   ├── Suspicious.py         # Main suspicious behavior detection
-│   │   ├── normalvideo.py        # Comparison video handler
-│   │   ├── suspiciousvideo.py    # Suspicious video detection logic
-│   │   ├── imgshuffle.py         # Preprocessing?
-│   │   ├── datset.py             # Dataset loading
-│   │   └── main.py               # Entry script
-│   ├── outputs/
-│   │   └── suspicious_output.mp4
-│   └── README.md
-│
 ├── common/                       # Shared files if needed later
 │   └── shared_utils.py
 │
